@@ -1,0 +1,25 @@
+##### 執行 #####
+#  .\winlogbeat.exe
+
+winlogbeat.event_logs:
+  - name: Application
+    ignore_older: 72h
+
+  - name: System
+
+
+processors:
+  - drop_fields:
+      fields: ["winlog.event_data","winlog.user.type","winlog.user.name","ecs","event.provider","event.code"]
+  - drop_fields:
+      fields: ["winlog.computer_name","winlog.provider_guid","winlog.provider_name","winlog.user.identifier"]
+  - drop_fields:
+      fields: ["winlog.user.domain","winlog.task","winlog.record_id","winlog.process.thread.id","winlog.process.pid"]
+  - drop_fields:
+      fields: ["winlog.opcode","winlog.keywords","winlog.activity_id","agent","winlog.api"]
+  - drop_fields:
+      fields: ["winlog.version","event.action"]
+
+
+output.logstash:
+  hosts: ["<IP>:5044"]
