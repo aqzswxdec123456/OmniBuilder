@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>5.0</version>
+    <date>2023-02-22T03:24:59Z</date>
+    <groups>
+        <group>
+            <name>自定義</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>System_CPU_Memory_Info_active</template>
+            <name>System_CPU_Memory_Info_active</name>
+            <groups>
+                <group>
+                    <name>自定義</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>CPU</name>
+                </application>
+                <application>
+                    <name>Memory</name>
+                </application>
+                <application>
+                    <name>System_Info</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>CPU_數量</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>system.cpu.num</key>
+                    <delay>12h</delay>
+                    <history>7d</history>
+                    <trends>7d</trends>
+                    <value_type>FLOAT</value_type>
+                    <applications>
+                        <application>
+                            <name>CPU</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>CPU_使用率</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>system.cpu.util</key>
+                    <history>7d</history>
+                    <trends>30d</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>%</units>
+                    <applications>
+                        <application>
+                            <name>CPU</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;60</expression>
+                            <name>CPU_使用率 &gt; 60%</name>
+                            <priority>WARNING</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>CPU_load1</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>system_cpu_memory_info[cpu_load1]</key>
+                    <history>7d</history>
+                    <trends>30d</trends>
+                    <value_type>FLOAT</value_type>
+                    <applications>
+                        <application>
+                            <name>CPU</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;2.0</expression>
+                            <name>CPU_load1 &gt; 2.0</name>
+                            <priority>WARNING</priority>
+                            <description>0.7 - 0.8 ：負載較低&#13;
+0.8 - 1.2 ：負載正常&#13;
+1.2 - 1.5 ：負載略高!! 需注意監控和調整系統配置&#13;
+1.5 - 2.0 ：負載較高!!! 需進行優化調整&#13;
+2.0 - 3.0 ：負載很高!!!! 需進行緊急優化調整&#13;
+3.0 up ：負載非常高!!!!!!! 需立即進行優化調整</description>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>CPU_load5</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>system_cpu_memory_info[cpu_load5]</key>
+                    <history>7d</history>
+                    <trends>30d</trends>
+                    <value_type>FLOAT</value_type>
+                    <applications>
+                        <application>
+                            <name>CPU</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;2.0</expression>
+                            <name>CPU_load5 &gt; 2.0</name>
+                            <priority>WARNING</priority>
+                            <description>0.7 - 0.8 ：負載較低&#13;
+0.8 - 1.2 ：負載正常&#13;
+1.2 - 1.5 ：負載略高!! 需注意監控和調整系統配置&#13;
+1.5 - 2.0 ：負載較高!!! 需進行優化調整&#13;
+2.0 - 3.0 ：負載很高!!!! 需進行緊急優化調整&#13;
+3.0 up ：負載非常高!!!!!!! 需立即進行優化調整</description>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>CPU_load15</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>system_cpu_memory_info[cpu_load15]</key>
+                    <history>7d</history>
+                    <trends>30d</trends>
+                    <value_type>FLOAT</value_type>
+                    <applications>
+                        <application>
+                            <name>CPU</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;2.5</expression>
+                            <name>CPU_load15 &gt; 2.5</name>
+                            <priority>WARNING</priority>
+                            <description>0.7 - 0.8 ：負載較低&#13;
+0.8 - 1.2 ：負載正常&#13;
+1.2 - 1.5 ：負載略高!! 需注意監控和調整系統配置&#13;
+1.5 - 2.5 ：負載較高!!! 需進行優化調整&#13;
+2.5 - 4.0 ：負載很高!!!! 需進行緊急優化調整&#13;
+4.0 up ：負載非常高!!!!!!!! 需立即進行優化調整</description>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Hostname</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>system_cpu_memory_info[Hostname]</key>
+                    <delay>12h</delay>
+                    <history>7d</history>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <applications>
+                        <application>
+                            <name>System_Info</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Memory_Total</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>system_cpu_memory_info[Mem_Total]</key>
+                    <delay>12h</delay>
+                    <history>7d</history>
+                    <trends>7d</trends>
+                    <units>GB</units>
+                    <applications>
+                        <application>
+                            <name>Memory</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Memory_使用率</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>system_cpu_memory_info[Mem_UsedPercent]</key>
+                    <history>7d</history>
+                    <trends>7d</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>%</units>
+                    <applications>
+                        <application>
+                            <name>Memory</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;90</expression>
+                            <name>Memory_使用率 &gt; 90%</name>
+                            <priority>WARNING</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>OS_version</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>system_cpu_memory_info[OS_version]</key>
+                    <delay>12h</delay>
+                    <history>7d</history>
+                    <trends>7d</trends>
+                    <value_type>FLOAT</value_type>
+                    <applications>
+                        <application>
+                            <name>System_Info</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Uptime</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>system_cpu_memory_info[Uptime]</key>
+                    <delay>5m</delay>
+                    <history>7d</history>
+                    <trends>7d</trends>
+                    <units>s</units>
+                    <applications>
+                        <application>
+                            <name>System_Info</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&lt;10m</expression>
+                            <name>{HOST.NAME} has been restarted (uptime &lt; 10m)</name>
+                            <priority>WARNING</priority>
+                            <description>The host uptime is less than 10 minutes</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+            </items>
+        </template>
+    </templates>
+</zabbix_export>
