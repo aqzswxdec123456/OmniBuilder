@@ -1,0 +1,8 @@
+{
+  "registry-mirror": [
+    "https://dockerhub.azk8s.cn"
+  ],
+  "insecure-registries": [
+    "<IP>:5000"
+  ]
+}
