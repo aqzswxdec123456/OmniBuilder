@@ -4,8 +4,9 @@
 - 支援VM、No Docker
 - 防火牆開啟：27017，可以透過replication.sh 、 router.sh 、 shard.sh 查看
 - 建立 Jenkins 搭配使用
+- 建議 install 放自己的方裝包，並且replication 根據需求修改安裝模式
 
-# mongo 安裝操考腳本
+# mongo 安裝參考腳本
 ```sh
 sh $PWD/mongo/sh/replication.sh
 sh $PWD/mongo/sh/router.sh
