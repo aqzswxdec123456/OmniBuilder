@@ -1,17 +1,19 @@
 # centos 7
-mongodb-org-mongos-6.0.2-1.el7.x86_64.rpm
-mongodb-org-server-6.0.2-1.el7.x86_64.rpm
-mongodb-org-shell-5.0.13-1.el7.x86_64.rpm
-mongodb-org-tools-4.2.23-1.el7.x86_64.rpm
+rpm -ivh mongodb-org-mongos-6.0.2-1.el7.x86_64.rpm
+rpm -ivh mongodb-org-server-6.0.2-1.el7.x86_64.rpm
+rpm -ivh mongodb-org-shell-5.0.13-1.el7.x86_64.rpm
+rpm -ivh mongodb-org-tools-4.2.23-1.el7.x86_64.rpm
 
-以上四個一定要下載到這個目錄底下
-https://www.mongodb.com/download-center/community/releases
-
-# centos 8
+# centos 8 指令為參考
 rpm -ivh mongodb-org-tools-6.0.6-1.el8.x86_64.rpm
-rpm -ivh mongodb-org-tools-6.0.6-1.el7.x86_64
-rpm -ivh mongodb-org-tools-6.0.6-1.el8.x86_64.rpm
-rpm -ivh mongodb-org-database-tools-extra-6.0.6-1.el8.x86_64.rpm
-rpm -ivh --nodeps mongodb-org-tools-6.0.6-1.el7.x86_64.rpm
 rpm -ivh --nodeps mongodb-org-tools-6.0.6-1.el8.x86_64.rpm
-rpm -ivh --nodeps mongodb-org-database-tools-extra-6.0.6-1.el8.x86_64.rpm
+
+# 指定的 url
+https://repo.mongodb.org/yum/redhat/8/mongodb-org/6.0/x86_64/RPMS/mongodb-database-tools-100.8.0.x86_64.rpm
+https://repo.mongodb.org/yum/redhat/8/mongodb-org/6.0/x86_64/RPMS/mongodb-mongosh-1.10.1.x86_64.rpm
+https://repo.mongodb.org/yum/redhat/8/mongodb-org/6.0/x86_64/RPMS/mongodb-org-6.0.6-1.el8.x86_64.rpm
+https://repo.mongodb.org/yum/redhat/8/mongodb-org/6.0/x86_64/RPMS/mongodb-org-database-6.0.6-1.el8.x86_64.rpm
+https://repo.mongodb.org/yum/redhat/8/mongodb-org/6.0/x86_64/RPMS/mongodb-org-database-tools-extra-6.0.6-1.el8.x86_64.rpm
+https://repo.mongodb.org/yum/redhat/8/mongodb-org/6.0/x86_64/RPMS/mongodb-org-mongos-6.0.6-1.el8.x86_64.rpm
+https://repo.mongodb.org/yum/redhat/8/mongodb-org/6.0/x86_64/RPMS/mongodb-org-server-6.0.6-1.el8.x86_64.rpm
+https://repo.mongodb.org/yum/redhat/8/mongodb-org/6.0/x86_64/RPMS/mongodb-org-tools-6.0.6-1.el8.x86_64.rpm

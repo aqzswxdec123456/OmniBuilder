@@ -1,5 +1,6 @@
 # 注意
-- rpm 參考　url：　https://www.mongodb.com/download-center/community/releases
+- 準備 rpm os8 [6版本](https://repo.mongodb.org/yum/redhat/8/mongodb-org/6.0/x86_64/RPMS/)
+- 準備 rpm os7 [不選版本](https://repo.mongodb.org/yum/redhat/7/mongodb-org/)
 - 支援VM、No Docker
 - 防火牆開啟：27017，可以透過replication.sh 、 router.sh 、 shard.sh 查看
 - 建立 Jenkins 搭配使用
