@@ -1,0 +1,17 @@
+# centos 7
+mongodb-org-mongos-6.0.2-1.el7.x86_64.rpm
+mongodb-org-server-6.0.2-1.el7.x86_64.rpm
+mongodb-org-shell-5.0.13-1.el7.x86_64.rpm
+mongodb-org-tools-4.2.23-1.el7.x86_64.rpm
+
+以上四個一定要下載到這個目錄底下
+https://www.mongodb.com/download-center/community/releases
+
+# centos 8
+rpm -ivh mongodb-org-tools-6.0.6-1.el8.x86_64.rpm
+rpm -ivh mongodb-org-tools-6.0.6-1.el7.x86_64
+rpm -ivh mongodb-org-tools-6.0.6-1.el8.x86_64.rpm
+rpm -ivh mongodb-org-database-tools-extra-6.0.6-1.el8.x86_64.rpm
+rpm -ivh --nodeps mongodb-org-tools-6.0.6-1.el7.x86_64.rpm
+rpm -ivh --nodeps mongodb-org-tools-6.0.6-1.el8.x86_64.rpm
+rpm -ivh --nodeps mongodb-org-database-tools-extra-6.0.6-1.el8.x86_64.rpm
